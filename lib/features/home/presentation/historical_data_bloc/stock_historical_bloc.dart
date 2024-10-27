@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:ezystocks/features/home/data/entities/stock_historical_entity.dart';
-import 'package:ezystocks/features/home/data/entities/user_stock_entity.dart';
-import 'package:ezystocks/features/home/domain/use_cases/historical_data_usecases.dart';
+import 'package:ezystocks/features/home/business/entities/stock_historical_entity.dart';
+import 'package:ezystocks/features/home/business/entities/user_stock_entity.dart';
+import 'package:ezystocks/features/home/business/use_cases/historical_data_usecases.dart';
 import 'package:meta/meta.dart';
 
 part 'stock_historical_event.dart';

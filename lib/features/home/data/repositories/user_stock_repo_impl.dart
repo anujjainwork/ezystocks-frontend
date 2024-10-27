@@ -1,11 +1,11 @@
 import 'package:ezystocks/features/home/data/data_sources/user_stock_api_service.dart';
-import 'package:ezystocks/features/home/data/entities/stock_historical_entity.dart';
-import 'package:ezystocks/features/home/data/entities/user_stock_entity.dart';
-import 'package:ezystocks/features/home/data/entities/user_stock_entity_list.dart';
-import 'package:ezystocks/features/home/domain/models/stock_historical_model.dart';
-import 'package:ezystocks/features/home/domain/models/user_stocks_model.dart';
-import 'package:ezystocks/features/home/domain/models/users_stocks_list_model.dart';
-import 'package:ezystocks/features/home/domain/repositories/user_stock_repo.dart';
+import 'package:ezystocks/features/home/business/entities/stock_historical_entity.dart';
+import 'package:ezystocks/features/home/business/entities/user_stock_entity.dart';
+import 'package:ezystocks/features/home/business/entities/user_stock_entity_list.dart';
+import 'package:ezystocks/features/home/data/models/stock_historical_model.dart';
+import 'package:ezystocks/features/home/data/models/user_stocks_model.dart';
+import 'package:ezystocks/features/home/data/models/users_stocks_list_model.dart';
+import 'package:ezystocks/features/home/business/repositories/user_stock_repo.dart';
 
 class HomeStocksDataRepositoryImpl extends HomeStocksDataRepository{
   

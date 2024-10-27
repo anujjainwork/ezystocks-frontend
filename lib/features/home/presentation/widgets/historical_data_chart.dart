@@ -1,4 +1,4 @@
-import 'package:ezystocks/features/home/data/entities/stock_historical_entity.dart';
+import 'package:ezystocks/features/home/business/entities/stock_historical_entity.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
