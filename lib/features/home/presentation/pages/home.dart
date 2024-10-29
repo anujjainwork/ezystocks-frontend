@@ -1,6 +1,6 @@
 import 'package:ezystocks/core/common/widgets/bottom_nav_bar.dart';
 import 'package:ezystocks/core/common/widgets/custom_text.dart';
-import 'package:ezystocks/features/home/data/entities/stock_historical_entity.dart';
+import 'package:ezystocks/features/home/business/entities/stock_historical_entity.dart';
 import 'package:ezystocks/features/home/presentation/historical_data_bloc/stock_historical_bloc.dart';
 import 'package:ezystocks/features/home/presentation/home_bloc/home_bloc.dart';
 import 'package:ezystocks/features/home/presentation/widgets/historical_data_chart.dart';
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: screenHeight * 0.01),
             displayLogoinAppBar(),
             SizedBox(height: screenHeight * 0.04),
-            searchbarHomeWidget(screenHeight, screenWidth),
+            searchbarHomeWidget(screenHeight,screenWidth,context),
             SizedBox(height: screenHeight * 0.05),
             // createDataChart(exampleData,screenWidth),
             BlocConsumer<StockHistoricalBloc, StockHistoricalState>(

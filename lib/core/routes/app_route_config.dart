@@ -1,4 +1,5 @@
 import 'package:ezystocks/core/routes/app_route_constants.dart';
+import 'package:ezystocks/features/search/presentation/pages/stocks_search_screen.dart';
 import 'package:ezystocks/features/splash_screen/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -10,16 +11,30 @@ class AppRouter {
     initialLocation: '/splash_screen',
     routes: [
       GoRoute(
-        path: '/splash_screen',
-        pageBuilder: (context,state){
-          return MaterialPage(child: SplashScreen());
-        }
-      ),
+          path: '/splash_screen',
+          pageBuilder: (context, state) {
+            return MaterialPage(child: SplashScreen());
+          }),
       GoRoute(
         name: MyAppRouteConstants.homeRouteName,
         path: '/',
         pageBuilder: (context, state) {
           return MaterialPage(child: HomePage());
+        },
+      ),
+      GoRoute(
+        path: '/search',
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: StockSearch(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              return FadeTransition(
+                opacity: animation,
+                child: child,
+              );
+            },
+          );
         },
       ),
       GoRoute(
@@ -35,4 +50,3 @@ class AppRouter {
     },
   );
 }
-

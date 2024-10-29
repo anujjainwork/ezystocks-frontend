@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:ezystocks/core/base_urls.dart';
-import 'package:ezystocks/features/home/domain/models/user_stocks_model.dart';
-import 'package:ezystocks/features/home/domain/models/users_stocks_list_model.dart';
+import 'package:ezystocks/features/home/data/models/user_stocks_model.dart';
+import 'package:ezystocks/features/home/data/models/users_stocks_list_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 

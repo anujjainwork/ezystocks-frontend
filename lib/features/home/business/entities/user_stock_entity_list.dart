@@ -1,4 +1,4 @@
-import 'package:ezystocks/features/home/data/entities/user_stock_entity.dart';
+import 'package:ezystocks/features/home/business/entities/user_stock_entity.dart';
 
 class UserStocksEntityList{
   final List<UserStocksEntity> user_stocks;

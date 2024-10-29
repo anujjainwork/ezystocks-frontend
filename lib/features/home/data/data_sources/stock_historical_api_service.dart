@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:ezystocks/features/home/domain/models/stock_historical_model.dart';
+import 'package:ezystocks/features/home/data/models/stock_historical_model.dart';
 import 'package:http/http.dart' as http;
 
 class StockHistoricalApiService {

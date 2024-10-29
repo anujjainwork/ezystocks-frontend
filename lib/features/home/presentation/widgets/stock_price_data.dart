@@ -1,5 +1,5 @@
 import 'package:ezystocks/core/common/widgets/custom_text.dart';
-import 'package:ezystocks/features/home/data/entities/stock_historical_entity.dart';
+import 'package:ezystocks/features/home/business/entities/stock_historical_entity.dart';
 import 'package:flutter/material.dart';
 
 Widget getStockPriceData(List<StockHistoricalEntity> historicalData, double screenHeight){

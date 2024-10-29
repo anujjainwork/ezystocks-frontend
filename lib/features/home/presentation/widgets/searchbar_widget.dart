@@ -1,9 +1,12 @@
 import 'package:ezystocks/core/common/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-Widget searchbarHomeWidget(double screenHeight, double screenWidth) {
+Widget searchbarHomeWidget(double screenHeight, double screenWidth,BuildContext context) {
   return GestureDetector(
-    onTap: () {},
+    onTap: () {
+      GoRouter.of(context).go('/search');
+    },
     child: Container(
       height: screenHeight * 0.06,
       width: screenWidth * 0.8,

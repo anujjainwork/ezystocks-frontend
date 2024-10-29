@@ -1,5 +1,5 @@
 import 'package:ezystocks/core/constants/constants.dart';
-import 'package:ezystocks/features/home/data/entities/user_stock_entity.dart';
+import 'package:ezystocks/features/home/business/entities/user_stock_entity.dart';
 
 class UserStocksModel extends UserStocksEntity {
   UserStocksModel(

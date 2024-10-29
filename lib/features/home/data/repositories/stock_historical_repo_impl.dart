@@ -1,7 +1,7 @@
 import 'package:ezystocks/features/home/data/data_sources/stock_historical_api_service.dart';
-import 'package:ezystocks/features/home/domain/models/stock_historical_model.dart';
-import 'package:ezystocks/features/home/data/entities/stock_historical_entity.dart';
-import 'package:ezystocks/features/home/domain/repositories/stock_historical_repo.dart';
+import 'package:ezystocks/features/home/data/models/stock_historical_model.dart';
+import 'package:ezystocks/features/home/business/entities/stock_historical_entity.dart';
+import 'package:ezystocks/features/home/business/repositories/stock_historical_repo.dart';
 
 class StockHistoricalRepositoryImpl implements StockHistoricalDataRepo {
   final StockHistoricalApiService apiService = StockHistoricalApiService();
