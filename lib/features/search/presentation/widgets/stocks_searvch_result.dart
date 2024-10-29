@@ -10,9 +10,9 @@ Widget searchResultsWidget(double screenHeight, double screenWidth) {
         return const Center(child: CircularProgressIndicator());
       } else if (state is StockSearchLoaded) {
         return Scrollbar(
-          thumbVisibility: true, // Always show the scrollbar thumb
-          radius: Radius.circular(10), // Rounded edges for the scrollbar thumb
-          thickness: 6.0, // Width of the scrollbar thumb
+          thumbVisibility: true,
+          radius: const Radius.circular(10),
+          thickness: 6.0,
           child: ListView.builder(
             padding: EdgeInsets.symmetric(
               vertical: screenHeight * 0.02,
@@ -21,9 +21,27 @@ Widget searchResultsWidget(double screenHeight, double screenWidth) {
             itemCount: state.stockLists.length,
             itemBuilder: (context, index) {
               final stock = state.stockLists[index];
-              return ListTile(
-                title: CustomTextWidget(text: stock.name, color: Colors.black),
-                subtitle: CustomTextWidget(text: stock.symbol, color: Colors.grey),
+              return Dismissible(
+                key: Key(stock.symbol),
+                direction: DismissDirection.startToEnd, // Only allow right swipe
+                confirmDismiss: (direction) async {
+                  if (direction == DismissDirection.startToEnd) {
+                    showAboutDialog(context: context);
+                    // context.read<StockSearchBloc>().add(YourBlocEvent(stock: stock));
+                    return false; // Prevent the item from being dismissed
+                  }
+                  return false;
+                },
+                background: Container(
+                  color: Colors.blue,
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: const Icon(Icons.arrow_forward, color: Colors.white),
+                ),
+                child: ListTile(
+                  title: CustomTextWidget(text: stock.name, color: Colors.black),
+                  subtitle: CustomTextWidget(text: stock.symbol, color: Colors.grey),
+                ),
               );
             },
           ),
@@ -32,7 +50,8 @@ Widget searchResultsWidget(double screenHeight, double screenWidth) {
         return Center(
           child: CustomTextWidget(
             text: 'Error: ${state.errorMessage}',
-            color: Colors.red,
+            fontSize: 12,
+            color: Colors.black,
           ),
         );
       }
