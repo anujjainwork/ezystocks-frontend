@@ -24,7 +24,7 @@ Widget getBottomNavBar(double screenHeight, BuildContext context) {
           children: [
             bottomNavBarIcon(Icons.home, context, "/"),
             bottomNavBarIcon(Icons.watch_later_outlined, context, "/watchlist"),
-            bottomNavBarIcon(Icons.computer, context, "/wallet"),
+            bottomNavBarIcon(Icons.computer, context, "/prediction"),
             bottomNavBarIcon(Icons.wallet, context, "/wallet"),
           ]),
     ),

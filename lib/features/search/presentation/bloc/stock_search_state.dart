@@ -9,8 +9,9 @@ class StockSearchLoading extends StockSearchState {}
 
 class StockSearchLoaded extends StockSearchState {
   final List<SearchStocksEntity> stockLists;
+  final String query;
 
-  StockSearchLoaded(this.stockLists);
+  StockSearchLoaded(this.stockLists, this.query);
 }
 
 class StockSearchError extends StockSearchState {

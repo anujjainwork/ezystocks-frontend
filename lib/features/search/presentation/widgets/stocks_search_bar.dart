@@ -26,8 +26,7 @@ Widget searchBarWidget(
                   decoration:
                       const InputDecoration.collapsed(hintText: 'Search'),
                   onChanged: (query) {
-                    // Trigger search event
-                    context.read<StockSearchBloc>().add(SearchStocks(query));
+                    context.read<StockSearchBloc>().add(SearchStocksEvent(query));
                   },
                 ),
               ),

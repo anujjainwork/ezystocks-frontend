@@ -5,7 +5,9 @@ import 'package:ezystocks/features/home/business/use_cases/historical_data_useca
 import 'package:ezystocks/features/home/business/use_cases/home_usecases.dart';
 import 'package:ezystocks/features/home/presentation/historical_data_bloc/stock_historical_bloc.dart';
 import 'package:ezystocks/features/home/presentation/home_bloc/home_bloc.dart';
+import 'package:ezystocks/features/search/data/repositories/add_to_watchlist_repo_impl.dart';
 import 'package:ezystocks/features/search/data/repositories/search_stock_repo_impl.dart';
+import 'package:ezystocks/features/search/presentation/bloc/add_to_watchlist_bloc_bloc.dart';
 import 'package:ezystocks/features/search/presentation/bloc/stock_search_bloc.dart';
 import 'package:ezystocks/features/splash_screen/splashscreen.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
     final getHistoricalUseCase = GetHistoricalUseCase(
         stockHistoricalRepositoryImpl: stockHistoricalRepositoryImpl);
     final searchStocksRepositoryImpl = SearchStocksRepositoryImpl();
+    final addToWatchListRepoImpl = AddToWatchlistRepositoryImpl();
 
     return MultiBlocProvider(
       providers: [
@@ -37,6 +40,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => StockSearchBloc(searchStocksRepositoryImpl),
+        ),
+        BlocProvider(
+          create: (context) => AddToWatchlistBloc(addToWatchListRepoImpl),
         ),
       ],
       child: MaterialApp.router(

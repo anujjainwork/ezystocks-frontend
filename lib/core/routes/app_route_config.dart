@@ -1,4 +1,5 @@
 import 'package:ezystocks/core/routes/app_route_constants.dart';
+import 'package:ezystocks/features/prediction/presentation/pages/prediction_page.dart';
 import 'package:ezystocks/features/search/presentation/pages/stocks_search_screen.dart';
 import 'package:ezystocks/features/splash_screen/splashscreen.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +43,13 @@ class AppRouter {
         path: '/wallet',
         pageBuilder: (context, state) {
           return MaterialPage(child: HomePage());
+        },
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.predicitionName,
+        path: '/prediction',
+        pageBuilder: (context, state) {
+          return MaterialPage(child: PredictionPage());
         },
       ),
     ],
