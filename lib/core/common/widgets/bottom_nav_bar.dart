@@ -23,9 +23,9 @@ Widget getBottomNavBar(double screenHeight, BuildContext context) {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             bottomNavBarIcon(Icons.home, context, "/"),
-            bottomNavBarIcon(Icons.watch_later_outlined, context, "/watchlist"),
-            bottomNavBarIcon(Icons.computer, context, "/prediction"),
-            bottomNavBarIcon(Icons.wallet, context, "/wallet"),
+            bottomNavBarIcon(Icons.watch_later_outlined, context, "watchlist"),
+            bottomNavBarIcon(Icons.computer, context, "prediction"),
+            bottomNavBarIcon(Icons.wallet, context, "wallet"),
           ]),
     ),
   );

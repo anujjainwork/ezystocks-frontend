@@ -2,8 +2,6 @@ import 'dart:convert';
 
 import 'package:ezystocks/core/base_urls.dart';
 import 'package:ezystocks/core/constants/constants.dart';
-import 'package:ezystocks/features/search/business/entities/watchlist_entity.dart';
-import 'package:ezystocks/features/search/data/models/watchlist_model.dart';
 import 'package:http/http.dart' as http;
 
 class AddToWatchlistApiService{

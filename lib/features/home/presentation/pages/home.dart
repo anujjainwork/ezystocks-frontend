@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                   return const Center(child: CircularProgressIndicator());
                 } else {
                   return showUserStocksList(
-                      state, screenWidth); // Pass the state
+                      state,screenHeight, screenWidth,); // Pass the state
                 }
               },
             ),
