@@ -1,4 +1,5 @@
 import 'package:ezystocks/core/common/widgets/custom_text.dart';
+import 'package:ezystocks/features/search/presentation/bloc/add_to_watchlist_bloc_bloc.dart';
 import 'package:ezystocks/features/search/presentation/bloc/stock_search_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,13 +24,24 @@ Widget searchResultsWidget(double screenHeight, double screenWidth) {
               final stock = state.stockLists[index];
               return Dismissible(
                 key: Key(stock.symbol),
-                direction: DismissDirection.startToEnd, // Only allow right swipe
+                direction:
+                    DismissDirection.startToEnd, // Only allow right swipe
                 confirmDismiss: (direction) async {
                   if (direction == DismissDirection.startToEnd) {
-                    showAboutDialog(context: context);
-                    // context.read<StockSearchBloc>().add(YourBlocEvent(stock: stock));
+                    context
+                        .read<AddToWatchlistBloc>()
+                        .add(AddToWatchListEvent(symbol: stock.symbol));
+
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('${stock.symbol} added to watchlist'),
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
+
                     return false; // Prevent the item from being dismissed
                   }
+
                   return false;
                 },
                 background: Container(
@@ -39,8 +51,10 @@ Widget searchResultsWidget(double screenHeight, double screenWidth) {
                   child: const Icon(Icons.arrow_forward, color: Colors.white),
                 ),
                 child: ListTile(
-                  title: CustomTextWidget(text: stock.name, color: Colors.black),
-                  subtitle: CustomTextWidget(text: stock.symbol, color: Colors.grey),
+                  title:
+                      CustomTextWidget(text: stock.name, color: Colors.black),
+                  subtitle:
+                      CustomTextWidget(text: stock.symbol, color: Colors.grey),
                 ),
               );
             },

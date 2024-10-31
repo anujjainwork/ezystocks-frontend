@@ -40,6 +40,7 @@ dependencies:
   fl_chart:
   intl:
   go_router:
+  equatable:
 
 
 dev_dependencies:

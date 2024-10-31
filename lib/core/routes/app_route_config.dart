@@ -1,6 +1,8 @@
 import 'package:ezystocks/core/routes/app_route_constants.dart';
+import 'package:ezystocks/features/prediction/presentation/pages/prediction_page.dart';
 import 'package:ezystocks/features/search/presentation/pages/stocks_search_screen.dart';
 import 'package:ezystocks/features/splash_screen/splashscreen.dart';
+import 'package:ezystocks/features/watchlist/presentation/pages/watchlist_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ezystocks/features/home/presentation/pages/home.dart';
@@ -42,6 +44,20 @@ class AppRouter {
         path: '/wallet',
         pageBuilder: (context, state) {
           return MaterialPage(child: HomePage());
+        },
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.predicitionName,
+        path: '/prediction',
+        pageBuilder: (context, state) {
+          return MaterialPage(child: PredictionPage());
+        },
+      ),
+      GoRoute(
+        name: MyAppRouteConstants.watchListname,
+        path: '/watchlist',
+        pageBuilder: (context, state) {
+          return MaterialPage(child: WatchListPage());
         },
       ),
     ],
