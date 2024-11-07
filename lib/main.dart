@@ -47,10 +47,13 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => HomeBloc(getUserStocksUseCase),
+          create: (context) => StockHistoricalBloc(getHistoricalUseCase),
         ),
         BlocProvider(
-          create: (context) => StockHistoricalBloc(getHistoricalUseCase),
+          create: (context) {
+            final stockHistoricalBloc = context.read<StockHistoricalBloc>();
+            return HomeBloc(getUserStocksUseCase,stockHistoricalBloc);
+          } 
         ),
         BlocProvider(
           create: (context) =>
