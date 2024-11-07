@@ -1,5 +1,6 @@
 import 'package:ezystocks/core/common/widgets/bottom_nav_bar_icon_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 Widget getBottomNavBar(double screenHeight, BuildContext context) {
   return Container(
@@ -22,10 +23,10 @@ Widget getBottomNavBar(double screenHeight, BuildContext context) {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            bottomNavBarIcon(Icons.home, context, "/"),
-            bottomNavBarIcon(Icons.watch_later_outlined, context, "watchlist"),
-            bottomNavBarIcon(Icons.computer, context, "prediction"),
-            bottomNavBarIcon(Icons.wallet, context, "wallet"),
+            bottomNavBarIcon(context, Icons.home, "/"),
+            bottomNavBarIcon(context, Icons.watch_later_outlined, "watchlist"),
+            bottomNavBarIcon(context, Icons.auto_graph_outlined, "prediction"),
+            bottomNavBarIcon(context, Icons.wallet, "wallet"),
           ]),
     ),
   );
